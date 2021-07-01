@@ -1,6 +1,6 @@
 
 export const ItemContainer= ({greeting}) => {
     return(
-        <h1 class="jumbotron text-center">{greeting}</h1>
+        <h1 className="jumbotron text-center">{greeting}</h1>
     )
 };

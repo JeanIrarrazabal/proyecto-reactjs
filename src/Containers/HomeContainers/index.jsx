@@ -1,12 +1,13 @@
 import { NavBarComponent } from '../../Components/NavBarComponent';
 import { ItemContainer } from '../../Components/ItemListContainer';
+import { CardProductos } from '../../Components/CardProductos'
 
 export const HomeContainer= () => {
-const carrito= [];
     return(
         <div>
-            <NavBarComponent cart={carrito}/>
-            <ItemContainer greeting={`Hola!! estoy saludando para cumplir el desafio`}/>
+            <NavBarComponent/>
+            <ItemContainer greeting={`Bienvenido al mundo de la carpinteria artesanal`}/>
+            <CardProductos/>
         </div>
     )
 }
