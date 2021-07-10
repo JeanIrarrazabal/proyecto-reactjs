@@ -1,5 +1,5 @@
 import { NavBarComponent } from '../../Components/NavBarComponent';
-import { ItemContainer } from '../../Components/ItemListContainer';
+import { ItemContainer } from '../../Containers/ItemListContainer';
 
 export const HomeContainer= () => {
     return(

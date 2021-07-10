@@ -1,6 +1,6 @@
 import { element } from 'prop-types';
 import { useEffect, useState } from 'react';
-import { CardProductos } from '../CardProductos';
+import { CardProductos } from '../../Components/CardProductos';
 
 export const ItemContainer= ({greeting}) => {
 const [listProducts, setListProducts]= useState([]);
@@ -22,9 +22,8 @@ useEffect( () => {
 
         {
             listProducts.map(element => {
-                console.log(element)
              return(
-                <CardProductos name={element.title} price={element.price} img={element.thumbnail}/>
+                <CardProductos name={element.title} price={element.price} img={element.thumbnail} stock={element.available_quantity}/>
               )
             })
         }
