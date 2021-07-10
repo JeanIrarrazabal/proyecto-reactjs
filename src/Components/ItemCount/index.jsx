@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const ButtonComponent= () => {
     const [contador, setContador]= useState(1);
