@@ -1,5 +1,5 @@
 
-export const CardProductos= ({name, price, img}) => {
+export const ItemDetail = ({name, price, img}) => {
     return(
       
         <div className="card-body">

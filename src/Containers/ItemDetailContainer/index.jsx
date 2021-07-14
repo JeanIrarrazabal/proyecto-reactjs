@@ -1,6 +1,6 @@
 import { element } from 'prop-types';
 import { useEffect, useState } from 'react';
-import { CardProductos } from '../../Components/CardProductos';
+import { ItemDetail } from '../../Components/ItemDetail';
 
 export const ItemDetailContainer= () => {
 const [listProducts, setListProducts]= useState([]);

@@ -5,7 +5,9 @@ import { HomeContainer } from './Containers/HomeContainers';
 // información que muesta en el HTML
 function App() {
   return (
-      <HomeContainer/>
+      <section>
+        <HomeContainer/>
+      </section>
   );
 }
 
