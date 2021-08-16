@@ -1,6 +1,6 @@
 import { NavBarComponent } from '../../Components/NavBarComponent';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import { ItemContainerDormitorio, ItemContainerCocina, ItemContainerBaño, ItemContainerJardineria, ItemContainerInicio} from '../../Containers/ItemListContainer';
+import { ItemContainerInicio, ItemContainerPasteleria} from '../../Containers/ItemListContainer';
 import {ItemDetailContainer} from '../../Containers/ItemDetailContainer';
 export const HomeContainer= () => {
     return(
@@ -12,23 +12,11 @@ export const HomeContainer= () => {
                         <ItemContainerInicio/>
                     </Route>
 
-                    <Route exact path="/Cocina">
-                        <ItemContainerCocina/>
+                    <Route exact path="/Pasteleria">
+                        <ItemContainerPasteleria/>
                     </Route>
 
-                    <Route exact path="/Dormitorio">
-                        <ItemContainerDormitorio/>
-                    </Route>
-
-                    <Route exact path="/Baño">
-                        <ItemContainerBaño/>
-                    </Route>
-
-                    <Route exact path="/Jardineria">
-                        <ItemContainerJardineria/>
-                    </Route>
-
-                    <Route exact path="/Detalle">
+                    <Route exact path="/Carrito">
                         <ItemDetailContainer/>
                     </Route>
 
