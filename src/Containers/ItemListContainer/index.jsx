@@ -25,13 +25,28 @@ export const ItemContainerInicio= () => {
             const [cart, setCart] = useState([])
             let valorStorage= localStorage.carritoStorage;
 
-            console.log(valorStorage)
-
             function addToCart (product){
+                if (cart.length != 0){
+                    const auxProduct= cart.findIndex(producto => producto.id == producto.id)
+                    if(auxProduct != -1){
+                        cart[auxProduct].cantidad++;
+                        setCart([...cart]);
+                    }else{
+                        setCart([...cart, product]);
+                    }
+                }else{
+                    setCart([...cart, product]);
+                }
+
                 setCart([...cart, product])
-                localStorage.setItem('carritoStorage',JSON.stringify (cart))
+                localStorage.setItem('carritoStorage',JSON.stringify (cart.price)); 
             }
             
+            let total =0;
+            cart.forEach(element => {
+                total= total +  element.price
+            })
+
             useEffect( () => {
                 async function getDataFromFireStore(){
                     const BD= getFirestore();
@@ -51,13 +66,13 @@ export const ItemContainerInicio= () => {
                     <h1 className="jumbotron text-center">Pasteles de primera calidad, hecho con productos 100% artesanales</h1>
                 
                     <div class="alert alert-warning" role="alert">
-                    Has agregado <strong>{cart.length}</strong> productos al carrito. <strong>Finaliza tu compra dirigiendote al Carrito</strong>
+                    Has agregado <strong>{cart.length}</strong> productos al carrito, con un total de ${total}.- <strong>Finaliza tu compra dirigiendote al Carrito</strong>
                     </div>
 
                     {
                         listProducts.map(element => {
                          return(
-                            <CardProductos name={element.name} price={element.price} img={element.img} description={element.description} stock={element.stock} addToCart={addToCart}/>
+                            <CardProductos cantidad={element.cantidad} id={element.id} name={element.name} price={element.price} img={element.img} description={element.description} stock={element.stock} addToCart={addToCart}/>
                           )
                         })
                     }

@@ -2,7 +2,7 @@ import { element } from 'prop-types';
 import { useEffect, useState } from 'react';
 import { ItemDetail } from '../../Components/ItemDetail';
 
-export const ItemDetailContainer= (valorStorage) => {
+export const ItemDetailContainer= () => {
 
 const [listProducts, setListProducts]= useState([]);
 
@@ -13,7 +13,7 @@ useEffect( () => {
         setListProducts(data.results)
     }
     getItems();
-    console.log(valorStorage)
+
 }, [])
  
 
