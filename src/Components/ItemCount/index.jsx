@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-export const ButtonComponent= () => {
-    const [contador, setContador]= useState(1);
+export const ButtonComponent= ({parentCallback}) => {
+    const [contador, setContador]= useState(0);
 
 function ValidadorContadorNegativo () {
     if (contador<1) {
@@ -12,18 +12,17 @@ function ValidadorContadorNegativo () {
 }
 
 function ValidarStock () {
-    if (contador>5){
-        console.log(`No hay stock`)
-    } else {
-        setContador(contador+1)
-    }
+    setContador(contador+1)
 }
+function sendData(){
+    parentCallback(contador+1);
 
+}
     return (
         <section>
         <button class="btn btn-secondary" onClick={() => {ValidadorContadorNegativo()}}>-</button>
         {contador}
-        <button class="btn btn-secondary" onClick={() => {ValidarStock()}}>+</button>
+        <button class="btn btn-secondary" onClick={() => {ValidarStock(); sendData()}}>+</button>
         </section>
     )
 }

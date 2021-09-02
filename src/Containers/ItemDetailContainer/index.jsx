@@ -1,28 +1,20 @@
-import { element } from 'prop-types';
-import { useEffect, useState } from 'react';
 import { ItemDetail } from '../../Components/ItemDetail';
+import { CartDetail } from '../../Components/CartDetail';
+
 
 export const ItemDetailContainer= () => {
-
-const [listProducts, setListProducts]= useState([]);
-
-useEffect( () => {
-    async function getItems(){
-        const response= await fetch ("https://api.mercadolibre.com/sites/MLA/search?q=rack&limit=1");
-        const data = await response.json();
-        setListProducts(data.results)
-    }
-    getItems();
-
-}, [])
- 
+    
+    let idStorage = JSON.parse(localStorage.getItem('Cart'));
 
     return(
+        
         <section>
+            
+            <CartDetail/>
         {
-            listProducts.map(element => {
+            idStorage?.map(element => {
              return(
-                <ItemDetail name={element.title} price={element.price} img={element.thumbnail}/>
+                <ItemDetail name={element.name} price={element.price} img={element.img} cantidad={element.cantidad}/>
               )
             })
         }
