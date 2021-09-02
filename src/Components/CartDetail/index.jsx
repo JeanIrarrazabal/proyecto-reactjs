@@ -1,3 +1,4 @@
+import { MDBCard, MDBCardHeader, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from 'mdb-react-ui-kit';
 
 export const CartDetail = ({}) => {
   function ClearStorage () { 
@@ -17,7 +18,7 @@ export const CartDetail = ({}) => {
   }
 
   return(  
-    <div id="htmlCarrito" class="row">
+    <div class="row" style={{ margin: "30px"}}>
       <div class="col-sm-4">
         <div class="card">
           <div id="cardCarrito" class="card-body">

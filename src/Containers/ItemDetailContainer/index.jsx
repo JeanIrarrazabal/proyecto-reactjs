@@ -9,8 +9,8 @@ export const ItemDetailContainer= () => {
     return(
         
         <section>
-            
             <CartDetail/>
+            <hr />
         {
             idStorage?.map(element => {
              return(

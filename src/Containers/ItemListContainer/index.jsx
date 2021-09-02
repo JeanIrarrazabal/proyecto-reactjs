@@ -25,7 +25,7 @@ export const ItemContainerInicio= () => {
             const [listProducts, setListProducts]= useState([]);
             const [cart, setCart] = useState([]);
             
-        // buscar si localstorage esta vacio
+        
             let idStorage= localStorage.Cart;
 
             function addToCart (product){
